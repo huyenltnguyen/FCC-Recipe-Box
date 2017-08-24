@@ -5,15 +5,20 @@ import { connect } from 'react-redux';
 class RecipeDetail extends Component {
 	render() {
 		if (!this.props.recipe) {
-			return <div>Select a recipe to get started.</div>
+			return <div></div> 
 		}
+		
+		const recipeId = this.props.recipe.name.match(/\S/g).join('');
 
-		return (
-			<div>
-				<h3>Details for:</h3>
-				<div>Name: { this.props.recipe.name }</div>
-				<div>Ingredients: { this.props.recipe.ingredients.map((ingredient) => <li key={ ingredient }>{ ingredient }</li> ) }</div>
-			</div>
+		return (			
+		    <ul className="list-group">	      
+	      	{ this.props.recipe.ingredients.map((ingredient) => {
+	      		return (
+	      			<li key={ ingredient } className="list-group-item">{ ingredient }</li>
+	      		)
+	      	})
+	      }
+	      </ul>
 		)
 	}
 }

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import RecipeList from '../containers/recipe-list';
-import RecipeDetail from '../containers/recipe-detail';
+import AddRecipeButton from '../containers/add-recipe-button';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <RecipeList />
-        <RecipeDetail />
+        <RecipeList />        
+        <AddRecipeButton />
       </div>
     );
   }
