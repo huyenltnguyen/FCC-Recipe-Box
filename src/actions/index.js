@@ -6,3 +6,10 @@ export function selectRecipe(recipe) {
 		payload: recipe
 	};
 }
+
+export function addRecipe(recipe) {
+	return {
+		type: types.RECIPE_ADDED,
+		payload: recipe
+	}
+}

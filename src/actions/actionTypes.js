@@ -1,1 +1,2 @@
 export const RECIPE_SELECTED = 'RECIPE_SELECTED';
+export const RECIPE_ADDED = 'RECIPE_ADDED';

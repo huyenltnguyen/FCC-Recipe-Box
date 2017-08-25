@@ -7,8 +7,6 @@ class RecipeDetail extends Component {
 		if (!this.props.recipe) {
 			return <div></div> 
 		}
-		
-		const recipeId = this.props.recipe.name.match(/\S/g).join('');
 
 		return (			
 		    <ul className="list-group">	      

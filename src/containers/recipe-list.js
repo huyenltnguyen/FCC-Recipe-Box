@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 class RecipeList extends Component {
 	renderList() {
 		return this.props.recipes.map((recipe) => {
+			
 			const recipeId = recipe.name.match(/\S/g).join('');
 
 			return (						 
