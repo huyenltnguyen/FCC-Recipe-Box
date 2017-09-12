@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 class RecipeList extends Component {
 	renderList() {
 		return this.props.recipes.map((recipe) => {
-			
+
 			const recipeId = recipe.name.match(/\S/g).join('');
 
 			return (						 
@@ -19,7 +19,14 @@ class RecipeList extends Component {
 			    </div>	    	
 
 		    	<div id={ recipeId } className="panel-collapse collapse">
-			    	<RecipeDetail />
+			    	<ul className="list-group">	      
+			      	{ recipe.ingredients.map((ingredient) => {
+			      		return (
+			      			<li key={ ingredient } className="list-group-item">{ ingredient }</li>
+			      		)
+			      	})
+			      }
+			      </ul>
 		    	</div>					    					    
 			  </li>
 			);

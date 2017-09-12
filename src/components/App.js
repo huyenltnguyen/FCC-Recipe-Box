@@ -1,17 +1,22 @@
+// jshint ignore: start
 import React, { Component } from 'react';
-import RecipeList from '../containers/recipe-list';
-import AddRecipeButton from '../containers/add-recipe-button';
 import './App.css';
+import { Grid, Row, Col } from 'react-bootstrap';
+import RecipeList from '../containers/RecipeList';
+import RecipeModal from '../containers/RecipeModal';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <RecipeList />        
-        <AddRecipeButton />
-      </div>
-    );
-  }
+export default class App extends Component {
+	render() {
+		return (
+			<Grid className="App">
+				<Row>
+					<Col sm={4}>
+						<RecipeList />
+						<RecipeModal />
+					</Col>
+				</Row>
+				
+			</Grid>
+		);
+	}
 }
-
-export default App;

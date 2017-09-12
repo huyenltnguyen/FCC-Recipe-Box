@@ -1,2 +1,5 @@
-export const RECIPE_SELECTED = 'RECIPE_SELECTED';
-export const RECIPE_ADDED = 'RECIPE_ADDED';
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const ADD_RECIPE = 'ADD_RECIPE';
+export const EDIT_RECIPE = 'EDIT_RECIPE';
+export const DELETE_RECIPE = 'DELETE_RECIPE';

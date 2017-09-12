@@ -4,19 +4,12 @@ import { bindActionCreators } from 'redux';
 import { addRecipe } from '../actions/index.js';
 
 class AddRecipeButton extends Component {
-	constructor(props) {
-		super(props);
 
-		this.state = { name: '', ingredients: [] }
-		this.addRecipe = this.addRecipe.bind(this);
-	}
-
-	addRecipe() {
-		//console.log("add recipe", this.state.text);
-		this.props.addRecipe(this.state);
-	}
+	
 
 	render() {
+		let newRecipe = {};
+
 		return (
 			<div className="container">
 				<div className="col-sm-4">
@@ -46,11 +39,15 @@ class AddRecipeButton extends Component {
 										<form role="form">
 											<div className="form-group">
 				                <label htmlFor="recipeName">Name</label>
-                				<input type="text" className="form-control" id="recipeName" placeholder="Recipe Name" onChange={ (event) => this.setState({ name: event.target.value }) }/>
+                				<input type="text" className="form-control" id="recipeName" placeholder="Recipe Name"onChange={ (event) => {
+                					newRecipe.name = event.target.value;	                					
+                				}}/>
             					</div>
 				              <div className="form-group">
 				                <label htmlFor="recipeIngredients">Ingredients</label>
-				                <textarea className="form-control" rows="2" id="recipeIngredients" placeholder="Enter ingredients,Separated,By commas"></textarea>
+				                <textarea className="form-control" rows="2" id="recipeIngredients" placeholder="Enter ingredients,Separated,By commas" onChange={ (event) => {
+				                	newRecipe.ingredients = event.target.value.split(',');
+				                } }></textarea>
 				              </div>				              
 										</form>     
 									</div>
@@ -59,7 +56,7 @@ class AddRecipeButton extends Component {
 										<button type="button" className="btn btn-default"	data-dismiss="modal">
 											Close
 										</button>
-										<button type="button" className="btn btn-primary" onClick={ this.addRecipe }>
+										<button type="button" className="btn btn-primary" onClick={ () => this.props.addRecipe(newRecipe) }>
 											Add recipe
 										</button>
 									</div>

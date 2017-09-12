@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes';
 
-export default function(state, action) {
+export default function(state = [], action) {
 	switch(action.type) {
 		case types.RECIPE_ADDED:
 			console.log([...state, action.payload]);
