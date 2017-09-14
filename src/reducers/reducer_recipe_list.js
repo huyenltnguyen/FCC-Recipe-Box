@@ -3,19 +3,19 @@ import * as types from '../actions/actionTypes';
 
 const defaultRecipeList = [
 	{ 
-		id: 0,
+		id: '0',
 		name: 'Pumpkin Pie',
 		ingredients: ['Pumpkin Puree', 'Sweetened Condensed Milk', 'Eggs', 'Pumpkin Pie Spice', 'Pie Crust']
 	},
 
 	{ 
-		id: 1,
+		id: '1',
 		name: 'Spaghetti',
 		ingredients: ['Noodles', 'Tomato Sauce', '(Optional) Meatballs']
 	},
 
 	{
-		id: 2,
+		id: '2',
 		name: 'Onion Pie',
 		ingredients: ['Onion', 'Pie Crust', 'Sounds Yummy right?']
 	}		
@@ -23,11 +23,11 @@ const defaultRecipeList = [
 
 export default function(state = defaultRecipeList, action) {
 	switch(action.type) {
-		case types.ADD_RECIPE:			
+		case types.ADD_RECIPE:
 			return [...state, action.payload];
 		case types.EDIT_RECIPE:
-			let targetRecipe = state.filter((recipe) => recipe.id === action.payload.id)[0];
-			let targetRecipeIndex = state.indexOf(targetRecipe);
+			const targetRecipe = state.filter((recipe) => recipe.id === action.payload.id)[0];
+			const targetRecipeIndex = state.indexOf(targetRecipe);
 
 			if (targetRecipe.name === action.payload.name && targetRecipe.ingredients.join(',') === action.payload.ingredients.join(',')) {
 				return state;
