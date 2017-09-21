@@ -14,17 +14,18 @@ class RecipeList extends Component {
 					<ul>
 						{ recipe.ingredients.map((ingredient) => <li key={ ingredient }>{ingredient}</li>) }
 					</ul>
-					<Button onClick={() => this.props.openModal('editRecipeModal', recipe) }>Edit</Button>
+					<Button className="btn-primary" onClick={() => this.props.openModal('editRecipeModal', recipe) }>Edit</Button>
 					<Button bsStyle="danger" onClick={() => this.props.deleteRecipe(recipe) }>Delete</Button>
 				</Panel>
 			);
-		}); 
+		});
+		
 	}
 
 	render() {
 		return (
-			<Accordion className="RecipeList">
-				{ this.renderList() }
+			<Accordion className="RecipeList">				
+					{ this.renderList() }				
 			</Accordion>
 		);
 	}

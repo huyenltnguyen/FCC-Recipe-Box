@@ -31,7 +31,10 @@ class RecipeModal extends Component {
 	render() {
 		return (
 			<div>
-				<Button bsStyle="primary" onClick={() => this.props.openModal('addRecipeModal', null) }>Add Recipe</Button>
+				<Button className="btn btn-primary btn-fab btn-fab-mini btn-round add-recipe-button"
+								onClick={() => this.props.openModal('addRecipeModal', null) }>
+					<i className="material-icons">add</i>
+				</Button>
 
 				<Modal show={ this.props.showModal } onHide={ this.props.closeModal }>
 					<Modal.Header closeButton>
