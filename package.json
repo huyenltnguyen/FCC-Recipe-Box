@@ -1,5 +1,5 @@
 {
-  "name": "fcc-recipe-box",
+  "name": "FCC-Recipe-Box",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,5 +23,5 @@
     "eslint-plugin-react": "^7.3.0",
     "gh-pages": "^1.0.0"
   },
-  "homepage": "https://huyenltnguyen.github.io/fcc-recipe-box"
+  "homepage": "https://huyenltnguyen.github.io/FCC-Recipe-Box"
 }
