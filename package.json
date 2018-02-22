@@ -19,8 +19,6 @@
     "deploy" : "npm run build&&gh-pages -d build"
   },
   "devDependencies": {
-    "eslint": "^4.6.0",
-    "eslint-plugin-react": "^7.3.0",
     "gh-pages": "^1.0.0"
   },
   "homepage": "https://huyenltnguyen.github.io/FCC-Recipe-Box"

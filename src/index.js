@@ -1,5 +1,3 @@
-// jshint ignore: start
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { loadState, saveState } from './localStorage';
@@ -16,14 +14,14 @@ const store = createStore(reducers, persistedState);
 
 store.subscribe(() => {
   saveState({
-  	recipes: store.getState().recipes
+    recipes: store.getState().recipes
   });
 });
 
 ReactDOM.render(
-	<Provider store={ store }>
-		<App />
-	</Provider>
-	, document.getElementById('root')
+  <Provider store={ store }>
+    <App />
+  </Provider>
+  , document.getElementById('root')
 );
 registerServiceWorker();
